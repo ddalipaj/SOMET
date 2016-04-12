@@ -1,86 +1,209 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%% author.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+% This is "sig-alternate.tex" V2.1 April 2013
+% This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
 %
-% sample root file for your contribution to an IFIP volume
-% published at Springer
+% This example file demonstrates the use of the 'sig-alternate.cls'
+% V2.5 LaTeX2e document class file. It is for those submitting
+% articles to ACM Conference Proceedings WHO DO NOT WISH TO
+% STRICTLY ADHERE TO THE SIGS (PUBS-BOARD-ENDORSED) STYLE.
+% The 'sig-alternate.cls' file will produce a similar-looking,
+% albeit, 'tighter' paper resulting in, invariably, fewer pages.
 %
-% Use this file as a template for your own input.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.5) produces:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) NO page numbers
 %
-%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+% as against the acm_proc_article-sp.cls file which
+% DOES NOT produce 1) thru' 3) above.
+%
+% Using 'sig-alternate.cls' you have control, however, from within
+% the source .tex file, over both the CopyrightYear
+% (defaulted to 200X) and the ACM Copyright Data
+% (defaulted to X-XXXXX-XX-X/XX/XX).
+% e.g.
+% \CopyrightYear{2007} will cause 2007 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions _only_ to
+% Gerald Murray (murray@hq.acm.org)
+% ===============================================================
+%
+% For tracking purposes - this is V2.0 - May 2012
 
+\documentclass{sig-alternate-05-2015}
 
-% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[ifip]{svmult}
-
-% choose options for [] as required from the list
-% in the Reference Guide, Sect. 2.2
-\usepackage{epsfig} 
-\usepackage{makeidx}         % allows index generation
-\usepackage{graphicx}        % standard LaTeX graphics tool
-                             % when including figure files
-\usepackage{multicol}        % used for the two-column index
-\usepackage[bottom]{footmisc}% places footnotes at page bottom
-% etc.
-% see the list of further useful packages
-% in the Reference Guide, Sects. 2.3, 3.1-3.3
-
-\makeindex             % used for the subject index
-                       % please use the style sprmidx.sty with
-                       % your makeindex program
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-\title*{Towards traceability between issues and reports for code review time analysis.}
-% Use \titlerunning{Short Title} for an abbreviated version of
-% your contribution title if the original one is too long
-\author{Dorealda Dalipaj\inst{1}}
-% Use \authorrunning{Short Title} for an abbreviated version of
-% your contribution title if the original one is too long
-\institute{Universidad Rey Juan Carlos, Madrid.
-\texttt{dorealda.dalipaj@urjc.es}
-}
-%
-% Use the package "url.sty" to avoid
-% problems with special characters
-% used in your e-mail or web address
-%
-\maketitle
+% Copyright
+\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
 
-\textbf{\textit{Abstract --}} Researchers working with software repositories, 
+
+% DOI
+\doi{10.475/123_4}
+
+% ISBN
+\isbn{123-4567-24-567/08/06}
+
+%Conference
+\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
+
+\acmPrice{\$15.00}
+
+%
+% --- Author Metadata here ---
+\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
+
+\title{Software Engineering Artifact in Software Development Process - Linkage between bugs and issues.}
+%\subtitle{[Extended Abstract]
+%\titlenote{A full version of this paper is available as
+%\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+%\LaTeX$2_\epsilon$\ and BibTeX} at
+%\texttt{www.acm.org/eaddress.htm}}}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{1} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Dorealda Dalipaj\\
+       \affaddr{Universidad Rey Juan Carlos}\\
+       \affaddr{LibreSoft Member}\\
+       \affaddr{Madrid, Spain}\\
+       \email{dorealda.dalipaj@urjc.es}
+% 2nd. author
+%\alignauthor Jesus M. Gonzalez-Barahona\\
+%\titlenote{This author is the one who did all the really hard work.}\\
+%       \affaddr{Universidad Rey Juan Carlos}\\
+%       \affaddr{GSyC/Libresoft}\\
+%       \affaddr{Madrid, Spain}\\
+%       \email{jgb@gsyc.es}
+%\and  
+% use '\and' if you need 'another row' of author names
+% 4th. author
+%\alignauthor Daniel Izquierdo Cortazar\\
+%       \affaddr{Universidad Rey Juan Carlos and Bitergia}\\
+%       \affaddr{GSyC/Libresoft}\\
+%       \affaddr{Madrid, Spain}\\
+%       \email{dizquierdo@bitergia.com}
+}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+%\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+%email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+%(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+%\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+Researchers working with software repositories, 
 often when building performance or quality models, need to recover traceability links between bug reports 
 in issue tracking repositories and reviews in code review systems. 
-\\
+
 However, too often the information stored in bug tracking repositories is not
 explicitly tagged or linked to the issues reviewing them. Researchers have to
-resort to heuristics to tag the data (e.g., to identify if an issue is a bug report or a work item), 
-or to link a piece of code to a particular issue or bug.
-\\
-Recent studies argue that software models based on imperfect datasets, with missing
-links to the code and incorrect tagging of issues, display biases
-that compromise the validity and generality of the models built on top of the datasets. 
-This risk enhances furthermore the importance of the task of recovering 
-traceability links between reports and issues. 
-\\
-In this study we propose two different automatic approaches on how to link report and issue 
-for an open source cloud computing project that enforces 
+resort to heuristics to tag the data (for example, to identify if an issue is a bug report or a work item).
+
+%Recent studies argue that software models based on imperfect datasets, with missing
+%links to the code and incorrect tagging of issues, display biases
+%that compromise the validity and generality of the models built on top of the datasets. 
+%This risk enhances furthermore the importance of the task of recovering 
+%traceability links between reports and issues. 
+
+In this study we promote a \emph{research artifact} in software engineering, 
+a reusable unit of research that can be used to support other research endeavors and has acted as a 
+support material that enabled the creation of the results published in a great number of papers until now - 
+linking bugs and issues 
+of the code review software process. 
+We present two \emph{state-of-the-practice} algorithms on how to link bugs and issues, picking as case study 
+the open source cloud computing project, OpenStack. 
+
+OpenStack enforces 
 strict development guidelines and rules on the quality of the 
 data in its issue tracking repository. We empirically compare the outcome of the two 
-approaches and use the most prominent one to quantitatively analyse two important metrics of performance 
-of code review in software maintenance: time to identify bug reports and time to carry out the review process.
-\\
-\\
-\textit{\textbf{Keywords:} traceability, code review, open source software, quantitative analysis.}
+approaches, highlighting the most prominent one.
+\end{abstract}
 
+%
+% End generated code
+%
+
+%
+%  Use this command to print the description
+%
+\printccsdesc
+
+% We no longer use \terms command
+%\terms{Theory}
+
+\keywords{Research artifact, software engineering, state-of-the-practice algorithms, open source.}
 
 \section{Introduction}
-\label{sec:1}
-% Always give a unique label
-% and use \ref{<label>} for cross-references
-% and \cite{<label>} for bibliographic references
-% use \sectionmark{}
-% to alter or adjust the section heading in the running head
 Software process data, especially bug reports and code changes, are widely used in software engineering research. The
 integration of reports and reviews, on one hand, provides valuable information on the history and evolution of a software project 
 \cite{con0}. 
@@ -100,8 +223,8 @@ processing and cleaning is often done using assumptions
 and heuristics. A generally accepted assumption is that most issue
 tracking systems contain just bug reports. Actually, 
 they contain other items such as approved design specifications for 
-additions and changes to the project team’s code repositories or 
-lightweight feature specifications.
+additions and changes to the project team's code repositories or 
+light weight feature specifications.
 
 The quality of these assumptions and heuristics represents a threat to 
 the validity of results derived from software 
@@ -116,172 +239,288 @@ Antoniol et al. \cite{con8} note that many of the issues in an issue tracking sy
 not actually represent bug reports, therefore, using such data might lead to 
 incorrect bug counts for the different parts of a software system.
 
-To prevent or minimize such situations, we would require a perfect dataset where such linkages 
+To prevent or minimize such situations, we present two algorithms to a correct way of linking 
+bugs and issues, which take into consideration the assumptions that researchers performing this task 
+usually consider as true. Our approach uses a reverse engineered model of the code
+review process, and extracts key information from the issue
+tracking and review systems of OpenStack. The results we bring evidence,
+do not involve subjective context but are material facts. As
+such, they can be recorded to trace the efficiency and effec-
+tiveness of the two methods.
+
+We have used such approach to support a previous study \cite{con23} 
+that brings evidence of the performance of code review by quantifying the time spent by developers to 
+identify the bugs reports, the time
+spent by them to carry out the reviewing process, as well as to assess the performance of code review - 
+individuation of bugs.
+
+%we would require a perfect dataset where such linkages 
+%and tagging of issues was done by professional developers and with great attention to detail. 
+%While such a perfect dataset might not exist, we believe that a near-ideal dataset does exist. 
+%This dataset is derived from the OpenStack project. The OpenStack project follows a disciplined 
+%software development process with careful attention to continuously maintaining the linkages 
+%between issues and code changes through automated tool support. The strong discipline and the 
+%automated tool support gives us strong confidence that this project represents a near-ideal 
+%case of high quality linkage dataset that is correctly tagged.
+
+Summarizing, this paper provides the following two contributions:
+\begin{itemize}
+ \item[$\bullet$] we present two fully automated approaches for linking issues from 
+ bugtracking system to reviews from code review system of Open Stack, bringing out their advantages and/or 
+ disadvantages,
+ \item[$\bullet$] we compare the results the two methods highlighting which is the most outstanding. 
+\end{itemize}
+
+In the remainder of this paper, we first describe the necessary background notions for our work (section 2). Next, we describe the 
+methodology (section 3), then present the results and discuss some conclusions (section 4). After future work (section 5), 
+we conclude with aknowledgements (section 6).
+
+\section{Background}
+This section provides background information about the bug-tracking and code review environments of OpenStack and the 
+tools for obtaining data from its repositories.
+
+We choose OpenStack because it is a large project that has adopted code
+reviews on a large scale, and therefore with an abundance of data coming from the engineering systems.
+OpenStack uses Launchpad, an issue tracking system, which is a repository that enables
+users and developers to report defects and feature requests. It allows such a reported issue to be triaged and (if deemed
+important) assigned to team members, to discuss the issue
+with any interested team member and to track the history of
+all work on the issue. During these issue discussions, team
+members can ask questions, share their opinions and help
+other team members. OpenStack uses a dedicated reviewing environment, 
+Gerrit, to review patches and bug fixes. It supports 
+lightweight processes for reviewing code changes, i.e., 
+to decide whether a developer's change is safe to
+integrate into the official Version Control System (VCS). During this process, 
+assigned reviewers make comments
+on a code change or ask questions that can lead to a discussion
+of the change and/or different revisions of the code change,
+before a final decision is made about the code change. If
+accepted, the most recent revision of the code change can enter
+the VCS, otherwise the change is abandoned
+and the developer will move on to something else.
+
+To obtain the issue reports and code review data of these ecosystems, we used the data set 
+provided by Gonz\'alez-Barahona et al. \cite{con22}. They developed the MetricsGrimoire tool to mine the repositories of
+OpenStack, then store the corresponding data into a relational database. 
+
+
+\section{Methodology}
+Our approach uses a reverse engineered model of the code review process, and extracts 
+key information from the issue tracking and code review systems.
+
+In the specific case of OpenStack, the issues contain the identification of the bug it is reviewing. While, on the other 
+hand, the comments of the bugs contain the identification of the issue that is reviewing the ticket. Consequently we 
+extract these information in a new repository for further analysis.
+
+To obtain this information we do the following steps:
+
+\begin{enumerate}
+ \item Extraction of the information from the data sources. OpenStack repositories consists in the data from the 
+ issue tracking system (\emph{Launchpad}) and the data from the code review system (\emph{Gerrit}). We extracted these
+ data using the \emph{Metrics Grimoire}\footnote{https://github.com/MetricsGrimoire/}, 
+ a toolset for mining the repositories of OpenStack, provided and mantained by \emph{Bitergia}.
+ \item Identification of data needed for the linkage. In this process we understand the infrastructure of both the issue 
+ tracking system and the code review system of the project we are analyzing. We individuate the elements which carry out 
+ the information that permits us to link the reports with the issues from both systems. On the behalf of the code review 
+ system we found that the issues indicate the identification of the bug they are reviewing. On the behalf of the bug 
+ tracking system we found that the comments of a bug reports the identification of the issue that is reviewing them. 
+ Both informations allow us to link the reviews with the bugs and viceversa.
+ \item Dataset preprocessing. Not all the information provided by the repositories of OpenStack is needed for this 
+ analysis. First, we are interested in linking bugs with issues. Thus we can ignore all the tickets in the bug tracking system 
+ that are not classified as bug. Second, our final aim is to recover the linkage for the fixed issues. Consequently we can 
+ ignore all the issues for which the status is other than 'Fix Released'.   
+ \item Analysis. We use Jupyter Notebook, a computational environment in which we can combine code execution, rich text, 
+ mathematics, plots and rich media, along with Pandas, an open source library specialised in providing high-performance 
+ data structures and data analysis. 
+\end{enumerate}
+
+\subsection{Linking issues with bugs.}
+The first approach for linking recovers links from code review system to bug tracking system. 
+To detect the links between issues and bugs, we first referred to the name of the branch on which a code change had 
+been made, since some of them follow the naming convention "bug/989868" with "989868" being a bug identifier, which 
+is called the \emph{related artifact}. 
+Applying regular expressions we extracted the bug identification, and then proceded with the linkage. Summarizing 
+the \emph{state-of-practice} algorithm for linking from the code reveiw system to the bug tracking system is:
+
+\begin{list}{}{}
+
+\item[$\space$] identify the \emph{related artifact};
+
+apply regular expresions to extract \emph{bug\_id} from \emph{related artifacts};
+
+link between issues and bugs matching where bug identification is \emph{bug\_id}.
+
+\end{list}
+
+The most inconvenient drawback in this approach is that, even though OpenStack project follows a disciplined 
+software development process with careful attention to continuously reporting the information that permits 
+traceability between issues and bugs, in practice, often, developers do not report such related artifacts, 
+resulting in missing links.
+
+After applying the above approach to OpenStack, we identified 72\% of the links with issues to the bugs they 
+review.
+
+\subsection{Linking bugs with issues.}
+The second approach for linking recovers links from bug tracking system to code review system.
+
+The first problem that arises in this case is how to identify the tickets classified as bugs. 
+In Launchpad, besides bugs reports, the developers can work with \textit{specifications} 
+(approved design specifications for additions and changes to the project code repositories) 
+and \textit{blueprints} (lightweight feature specifications).
+Identifying which of the reports have been classified as describing bugs is not a trivial task.
+Tickets usually are commented. Reviewers do discuss about having found a bug in a certain report or not. 
+But, analysing the comments of a ticket is not the most efficient way for extracting its classification, 
+not only because we will not identify 100\% of the tickets but we risk false positives too.
+
+By manual analysis of the tickets and studying the Launchpad work flow, we came across a pattern 
+in the evolution of a report states, with regards to confirming new bugs:
+
+\begin{list}{}{}
+
+\item[$\space$] a) when a ticket, stating a possible bug, is opened in Launchpad, its status is set to 
+\textit{New};
+\item[$\space$] b) if the problem described in the ticket is reproduced, the bug is confirmed as genuine and the 
+ticket status changes from \textit{New} to \textit{Confirmed};
+\item[$\space$] c) only when a bug is confirmed, the status then changes from \textit{Confirmed} to \textit{In Progress} 
+the moment when an issue is opened for review in Gerrit.
+  
+\end{list}
+
+Thus, we analysed the Launchpad repository searching for tickets that match with this pattern. 
+These are the tickets that have been classified as bug reports. Once identified, we extracted them in a 
+new repository for further analysis. 
+
+Next step, we linked tickets to reviews using the information that we find in the comments of the tickets. 
+Whenever a review receives a proposal for a fix, or a merge for a fix, it is reported in the 
+comments of the respective ticket. 
+Precisely, a merge comment looks like the following: 
+\\
+
+Reviewed: https://review.openstack.org/13083
+
+Committed: https://git.openstack.org/cgit/openstack
+
+/nova/commit/?id=be58dd8432a8d12484f5553d79a02
+
+e720e2c0435
+
+Submitter: Jenkins
+
+Branch: master ...
+\\
+
+We can see that in the first line, clearly, we are provided with the link to the issue in Gerrit. 
+
+A problem that arises in analysing the comments is that, for some ticket, they are a summary of some commit history. 
+Therefore, in these cases, we find more than a match with the pattern we are looking for within the body of 
+the comment, while the commit itself is not a merge in the master branch of the project that originated the ticket, 
+consequently not the correct result. 
+
+However there is a fixed format of the comments that report a merge (which is the one you can see in the example above).
+In this format, the information related to the review is stated at the very beginning of the 
+comment. Manually analysing the tickets in Launchpad, we have seen that they are found in the first 6 rows of the comment.
+
+Thus the first step is trunking the comments, so that we extract just the first 6 lines from every one of them. 
+Then, we are sure we will identify the right review. 
+
+Summarizing the \emph{state-of-practice} algorithm for linking from the the bug tracking system to 
+the code reveiw system is:
+
+\begin{list}{}{}
+
+\item[$\space$] identify \emph{bug reports};
+
+exctract \emph{issue\_id}, the information related to the issue that is reviewing the bug from the comments of the bug;
+
+link between bugs and issues where issue identification is \emph{issue\_id}.
+
+\end{list}
+
+After applying the above approach to OpenStack, we identified 90.2\% of the links with bugs to the issue reviewing them. 
+
+Furthermore, analysing the missing merges from the resulting dataset by picking up arbitrarily tickets, we found that 
+the reason they could not be linked is 
+that some of the gerrit identification, of the issue reviewing the bug, are missing from the 
+Gerrit repository.
+
+For example: 
+\\
+
+the bug:
+
+https://review.openstack.org/\#/q/topic:bug/
+
+1253497 
+\\
+
+is fixed in the issue:
+
+https://review.openstack.org/
+
+\#/c/92547/ ...
+\\
+
+but the issue id 92547 is not found in the Gerrit database.
+\\
+
+However, we would note that, thanks to the heuristics applied, there are no false positives in the 
+resulting dataset in this case. 
+
+\subsection{Comparison of Results and Conclusions}
+In this paper we present two \emph{state-of-the-practice} algorithms regarding what is by now 
+a \emph{research artifacts} in software engineering. 
+We discussed it's reusability and usefulness to support other research endeavors in section 1. 
+We run the two algorithms on a large open software project, such OpenStack and obtained two distinct results 
+(Table \ref{tab:2}), showing 
+clearly that one approach outstands the other.
+We hope these results will be a guideline to other researchers in future helping them to decide how to 
+recover the links at the best of their advantage. While, on one hand, we tested our approach on a single case study, 
+OpenStack, on the other what enfroces our confidence that this case acts as a representative for the category is 
+that code review process follows the same principles and practices everywhere. 
+
+\begin{table*}
+\centering
+\caption{The results of the two state-of-the practice algorithms applied on OpenStack (OS) history from July 2010 - January 2016.}
+\begin{tabular}{|c|c|l|l|} \hline
+Number of tickets in OS&Nr. of tickets fixed in OS&1st Approach (Gerrit-Launchpad)&2nd Approach (Launchpad-Gerrit)\\ \hline
+\texttt{88421} & 70587& 72\%& 90.2\%\\ \hline
+
+\end{tabular}
+\label{tab:2}
+\end{table*}
+% end the environment with {table*}, NOTE not {table}!
+
+\section{Future Work}
+We would like to continue to explore the power of the information from the code review process. 
+In section 1 we mentioned a study that noted that when considering links between bug reports and actual 
+code, there exists bias in the severity level of bugs and the experience of
+developers fixing bugs, thus a quality model built using only the linked 
+bugs, will be biased towards the behaviour of more experienced developers.
+
+To prevent and minimize such situations, we would require a perfect dataset where such linkages 
 and tagging of issues was done by professional developers and with great attention to detail. 
 While such a perfect dataset might not exist, we believe that a near-ideal dataset does exist. 
-This dataset is derived from the OpenStack project. The OpenStack project follows a disciplined 
+This dataset is derived from the OpenStack project. 
+
+The OpenStack project follows a disciplined 
 software development process with careful attention to continuously maintaining the linkages 
 between issues and code changes through automated tool support. The strong discipline and the 
 automated tool support gives us strong confidence that this project represents a near-ideal 
 case of high quality linkage dataset that is correctly tagged.
 
-Furthermore we used this dataset to quantitatively analyse the responsiveness of code review in 
-measuring the amount of time that developers spend to individuate bugs and in how much they spend 
-for fixing an issue.
-\\
-\\
-Summarizing, this paper provides the following two contributions:
-\begin{itemize}
- \item[$\bullet$] we present two fully automated approaches for linking issues from 
- bugtracking system to reviews from code review system of Open Stack,
- \item[$\bullet$] we then use the dataset obtained to quantitatively analyse two of the 
- most fundamental metrics of the responsiveness for the code review process of Open Stack. 
-\end{itemize}
+Therefore, in our immediate future work we aim to verify the
+effects of such biases for the OpenStack project, to see if even with a near-ideal dataset, biases
+do exist - leading us into verifying the conjecture if biases are more likely
+a symptom of the underlying software development process 
+instead of being due to the used heuristics.
 
-In the remainder of this paper, we first describe the necessary background notions for our work (section 3). Next, we describe the 
-case study setup (section 4), then present the results (section 5). After threats to 
-validity and future work (section 6 and section 7), we discuss some conclusions (section 8).
 
-\section{Background}
-\label{sec:2}
+%ACKNOWLEDGMENTS are optional
+\section{Acknowledgments}
+We would like to thank the SENECA EID project, which is funding this research under Marie-Skodowska Curie Actions.
 
-This section provides background information about previous research areas that motivated this study, 
-environments that we focus on and tools for obtaining data from their repositories. 
-\\
-Areas closely related to this research include data extraction and integration, data quality 
-in software engineering, 
-data verification in software repositories, and data quality effects on empirical software 
-engineering.
-\\
-Software engineering process data such as bug reports and
-version control log files are widely used in empirical software
-engineering. Therefore, the extraction and integration of this data is critical.
-Fischer et al. \cite{con0} presented a Release History Database which contains 
-the version control log and the bug report information. To link the change log and 
-the bug tracking database, Fischer et al. searched for change log messages which 
-match to a given regular expression. Later, they improved the linking algorithm and 
-built in a file-module verification \cite{con9}. A similar approach to link the 
-change log with the bug tracking database was chosen by other researchers. All of 
-them used regular expressions to find bug report link candidates in the change log 
-file (e.g., \cite{con10, con6, con11, con12, con13}).
-\\
-Liebchen and Shepperd \cite{con14} surveyed hundreds of empirical software engineering 
-papers to assess how studies manage data quality issues. They found only 23 that 
-explicitly referenced data quality. Four of the 23 suggested that data quality 
-might impact analysis, but made no suggestion of how to deal with it. They conclude that 
-there is very little work to assess the quality of data sets and point to the extreme 
-challenge of knowing the \textit{true} values and populations. They suggest that 
-simulation-based approaches might help.
-\\
-Bettenburg et al. \cite{con15, con16, con17} provided first analysis of bug report quality. 
-They investigated the attributes of a good bug report surveying developers and used it to 
-develop a computational model of a bug report quality. The resulting model allowed to 
-display the current quality of a defect report whilst typing.
-\\
-Hooimeijer et al. \cite{con18} also analyzed the quality of defect reports and tried to 
-predict whether the defect report will be closed within a given amount of time.
-Chen et al. \cite{con19} studied the change logs of three Open Source projects and analyzed 
-the quality of these log files. 
-\\
-Bachmann et al. \cite{con20} surveyed five Open Source and one Closed Source project 
-in order to provide a deeper insight into the quality and characteristics of these 
-often-used process data. Specifically, they defined quality and characteristics measures, 
-computed them and discussed the issues that arose from these observations. 
-They showed that there are vast diferences between the projects, particularly with respect 
-to the quality of the link rate between bugs and commits.
-\\
-Aranda et al. \cite{con21} provided a field study of coordination activities around bug fixing, 
-based on a survey of software professionals at Microsoft. Specifically, they studied 10 bugs in 
-detail and showed that: (i) electronic repositories often hold incomplete or incorrect data, 
-and (ii) the histories of even simple bugs are strongly dependent on social, organizational, and 
-technical knowledge that cannot be solely extracted through the automated analysis of software
-repositories. They report that software repositories show an incomplete picture of the social 
-processes in a project.
-\\
-Our approach uses a reverse engineered model of the code review process of Open Stack, and extracts 
-key information from the issue-tracking and code review systems. 
-
-%\subsection{Subsection Heading}
-%\label{sec:2}
-%Your text goes here.
-
-%\begin{equation}
-%\vec{a}\times\vec{b}=\vec{c}
-%\end{equation}
-
-%\subsubsection{Subsubsection Heading}
-%Your text goes here. Use the \LaTeX\ automatism for cross-references as
-%well as for your citations, see Sect.~\ref{sec:1}.
-
-%\paragraph{Paragraph Heading} 
-% Your text goes here.
-
-%\subparagraph{Subparagraph Heading.} Your text goes here.%
-%
-%\index{paragraph}
-% Use the \index{} command to code your index words
-%
-% For tables use
-%
-%\begin{table}
-%\centering
-%\caption{Please write your table caption here}
-%\label{tab:1}       % Give a unique label
-%
-% For LaTeX tables use
-%
-%\begin{tabular}{lll}
-%\hline\noalign{\smallskip}
-%first & second & third  \\
-%\noalign{\smallskip}\hline\noalign{\smallskip}
-%number & number & number \\
-%number & number & number \\
-%\noalign{\smallskip}\hline
-%\end{tabular}
-%\end{table}
-%
-%
-% For figures use
-%
-%\begin{figure}
-%\centering
-% Use the relevant command for your figure-insertion program
-% to insert the figure file.
-% For example, with the option graphicx use
-%\includegraphics[height=4cm]{figure.eps}
-%
-%\caption{Please write your figure caption here}
-%\label{fig:1}       % Give a unique label
-%\end{figure}
-%
-% For built-in environments use
-%
-%\begin{theorem}
-%Theorem text\footnote{Footnote} goes here.
-%\end{theorem}
-%
-% or
-%
-%\begin{lemma}
-%Lemma text goes here.
-%\end{lemma}
-%
-%
-% BibTeX users please use
-% \bibliographystyle{}
-% \bibliography{}
-%
-% Non-BibTeX users please follow the syntax
 % the syntax of "referenc.tex" for your own citations
 \input{referenc}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\printindex
 \end{document}
-
-
-
-
-
